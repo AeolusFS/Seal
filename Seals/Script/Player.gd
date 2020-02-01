@@ -10,14 +10,20 @@ var jump_height = -700
 var on_wall_speed = 100
 var on_wall_l = false
 var on_wall_r = false
+onready var player_anim = get_node("Player_sprite")
 
 func _physics_process(delta):
 	
 	if Input.is_action_pressed("ui_left"):
+		player_anim.play("walking")
+		player_anim.set_flip_h(true)
 		motion.x = max(motion.x - acceleration, -MAX_speed)
 	elif Input.is_action_pressed("ui_right"):
+		player_anim.play("walking")
+		player_anim.set_flip_h(false)
 		motion.x = min(motion.x + acceleration, MAX_speed)
 	else:
+		player_anim.play("idle")
 		motion.x = lerp(motion.x, 0, 0.2)
 		
 	if is_on_wall():
