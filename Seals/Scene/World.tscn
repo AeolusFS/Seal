@@ -1,18 +1,19 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Scene/World.gd" type="Script" id=1]
-[ext_resource path="res://Script/Player.gd" type="Script" id=2]
-[ext_resource path="res://Art/Player/player_idle1.png" type="Texture" id=3]
-[ext_resource path="res://Art/Player/player_idle2.png" type="Texture" id=4]
-[ext_resource path="res://Art/Player/player_walking1.png" type="Texture" id=5]
-[ext_resource path="res://Art/Player/player_walking2.png" type="Texture" id=6]
-[ext_resource path="res://Art/Player/player_walking3.png" type="Texture" id=7]
-[ext_resource path="res://Art/Player/player_walking4.png" type="Texture" id=8]
-[ext_resource path="res://Environment/grass.png" type="Texture" id=9]
-[ext_resource path="res://Environment/dirt.png" type="Texture" id=10]
-[ext_resource path="res://Shaders/glow.shader" type="Shader" id=11]
-[ext_resource path="res://Art/Spring1.png" type="Texture" id=12]
-[ext_resource path="res://Script/Spring.gd" type="Script" id=13]
+[ext_resource path="res://Environment/grass.png" type="Texture" id=2]
+[ext_resource path="res://Environment/dirt.png" type="Texture" id=3]
+[ext_resource path="res://Shaders/glow.shader" type="Shader" id=4]
+[ext_resource path="res://Script/Player.gd" type="Script" id=5]
+[ext_resource path="res://Art/Player/player_idle1.png" type="Texture" id=6]
+[ext_resource path="res://Art/Player/player_idle2.png" type="Texture" id=7]
+[ext_resource path="res://Art/Player/player_walking1.png" type="Texture" id=8]
+[ext_resource path="res://Art/Player/player_walking2.png" type="Texture" id=9]
+[ext_resource path="res://Art/Player/player_walking3.png" type="Texture" id=10]
+[ext_resource path="res://Art/Player/player_walking4.png" type="Texture" id=11]
+[ext_resource path="res://Script/Spring.gd" type="Script" id=12]
+[ext_resource path="res://Art/Spring2.png" type="Texture" id=13]
+[ext_resource path="res://Art/Spring1.png" type="Texture" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 32, 32, 32 )
@@ -73,7 +74,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="TileSet" id=20]
 9/name = "grass.png 9"
-9/texture = ExtResource( 9 )
+9/texture = ExtResource( 2 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 96, 96 )
@@ -235,7 +236,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="TileSet" id=30]
 0/name = "dirt.png 0"
-0/texture = ExtResource( 10 )
+0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 96, 96 )
@@ -309,16 +310,16 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 0/z_index = 0
 
 [sub_resource type="ShaderMaterial" id=31]
-shader = ExtResource( 11 )
+shader = ExtResource( 4 )
 
 [sub_resource type="SpriteFrames" id=32]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "walking",
 "speed": 10.0
@@ -327,7 +328,20 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 9.35645, 14.171 )
 
-[sub_resource type="RectangleShape2D" id=34]
+[sub_resource type="SpriteFrames" id=34]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "down",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=35]
 extents = Vector2( 16, 8 )
 
 [node name="World" type="Node"]
@@ -361,7 +375,7 @@ zoom = Vector2( 0.8, 0.8 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 256, 200 )
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -378,13 +392,16 @@ shape = SubResource( 33 )
 
 [node name="Spring" type="Area2D" parent="."]
 position = Vector2( 424, 368 )
-script = ExtResource( 13 )
+script = ExtResource( 12 )
 
-[node name="Sprite" type="Sprite" parent="Spring"]
-texture = ExtResource( 12 )
+[node name="Spring_sprite" type="AnimatedSprite" parent="Spring"]
+frames = SubResource( 34 )
+animation = "down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spring"]
 position = Vector2( 0, 8 )
-shape = SubResource( 34 )
+shape = SubResource( 35 )
+[connection signal="body_entered" from="Spring" to="Spring" method="_on_Spring_body_entered"]
+[connection signal="body_exited" from="Spring" to="Spring" method="_on_Spring_body_exited"]
 [connection signal="body_shape_entered" from="Spring" to="Spring" method="_on_Spring_body_shape_entered"]
 [connection signal="hit" from="Spring" to="Player" method="_on_Spring_hit"]

@@ -34,3 +34,7 @@ func _input(event):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Spring_body_entered(body):
+	pass # Replace with function body.
