@@ -7,6 +7,7 @@ extends Node
 var Outer = true
 onready var inner_tile = $Inner
 onready var outer_tile = $Outer
+onready var initial_pos = Vector2(256, 200)
 
 func _ready():
 	remove_child($Outer)
@@ -25,6 +26,9 @@ func _input(event):
 			remove_child(inner_tile)
 			outer_tile.show()
 			Outer = true
+			
+	if event.is_action_pressed("Key_R"):
+		$Player.position = initial_pos
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

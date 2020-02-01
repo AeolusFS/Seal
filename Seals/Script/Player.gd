@@ -1,13 +1,13 @@
 extends KinematicBody2D
 
 var motion = Vector2()
-var gravity = 20
-var acceleration = 50
+var gravity = 12
+var acceleration = 40
 var MAX_speed = 200
-var MAX_gravity = 1000
+var MAX_gravity = 500
 var jump = Vector2(0, -1)
-var jump_height = -700
-var on_wall_speed = 100
+var jump_height = -300
+var on_wall_speed = 80
 var on_wall_l = false
 var on_wall_r = false
 onready var player_anim = get_node("Player_sprite")
@@ -49,13 +49,13 @@ func _physics_process(delta):
 	move_and_slide(motion*delta*70, jump)
 	
 	if on_wall_l:
-		if motion.x > -400:
-			motion.x -= 400
-		if motion.x < -400:
+		if motion.x > -200:
+			motion.x -= 200
+		if motion.x < -200:
 			on_wall_l = false
 	
 	if on_wall_r:
-		if motion.x < 400:
-			motion.x += 400
-		if motion.x > 400:
+		if motion.x < 200:
+			motion.x += 200
+		if motion.x > 200:
 			on_wall_r = false
