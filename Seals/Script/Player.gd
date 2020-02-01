@@ -10,7 +10,7 @@ var jump_height = -300
 var on_wall_speed = 80
 var on_wall_l = false
 var on_wall_r = false
-var bounce_height = -500
+var bounce_height = -400
 onready var player_anim = get_node("Player_sprite")
 
 func _physics_process(delta):
