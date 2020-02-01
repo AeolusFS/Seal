@@ -10,6 +10,7 @@ var jump_height = -300
 var on_wall_speed = 80
 var on_wall_l = false
 var on_wall_r = false
+var bounce_height = -500
 onready var player_anim = get_node("Player_sprite")
 
 func _physics_process(delta):
@@ -59,3 +60,8 @@ func _physics_process(delta):
 			motion.x += 200
 		if motion.x > 200:
 			on_wall_r = false
+			
+func _on_Spring_hit():
+	motion.y = bounce_height
+	move_and_slide(motion, jump)
+
