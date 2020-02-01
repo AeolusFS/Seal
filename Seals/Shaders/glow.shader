@@ -1,4 +1,5 @@
 shader_type canvas_item;
+uniform float glow : hint_range(0,5);
 
 vec4 sample_glow_pixel(sampler2D tex, vec2 uv) {
     float hdr_threshold = 0.1; // Exagerated, almost everything will glow
@@ -14,7 +15,7 @@ void fragment() {
     vec4 col3 = sample_glow_pixel(SCREEN_TEXTURE, SCREEN_UV + vec2(0, ps.y));
 
     vec4 col = texture(SCREEN_TEXTURE, SCREEN_UV);
-    vec4 glowing_col = 0.2 * (col0 + col1 + col2 + col3);
+    vec4 glowing_col = glow * (col0 + col1 + col2 + col3);
 
     COLOR = vec4(col.rgb + glowing_col.rgb, col.a);
 }

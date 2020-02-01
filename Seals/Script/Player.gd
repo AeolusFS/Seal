@@ -5,12 +5,14 @@ var gravity = 12
 var acceleration = 40
 var MAX_speed = 200
 var MAX_gravity = 500
+var MAX_bounce = 1000
 var jump = Vector2(0, -1)
 var jump_height = -300
 var on_wall_speed = 80
 var on_wall_l = false
 var on_wall_r = false
 var bounce_height = -400
+var bounce_width = -1600
 onready var player_anim = get_node("Player_sprite")
 
 func _physics_process(delta):
@@ -61,7 +63,18 @@ func _physics_process(delta):
 		if motion.x > 200:
 			on_wall_r = false
 			
-func _on_Spring_hit():
+
+func _on_BSpring_hit_up():
 	motion.y = bounce_height
-	move_and_slide(motion, jump)
+
+func _on_USpring_hit_down():
+	motion.y = - bounce_height
+
+func _on_LSpring_hit_left():
+	motion.x -= bounce_width
+	motion.y = bounce_height
+
+func _on_RSpring_hit_right():
+	motion.x += bounce_width
+	motion.y = bounce_height
 

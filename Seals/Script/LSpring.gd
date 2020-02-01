@@ -1,6 +1,6 @@
 extends Area2D
 
-signal hit
+signal hit_left
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -17,10 +17,9 @@ func _ready():
 #	pass
 
 
-
 func _on_Spring_body_shape_entered(body_id, body, body_shape, area_shape):
 	
-	emit_signal("hit")     # send signal 
+	emit_signal("hit_left")     # send signal 
 	#$CollisionShape2D.set_deferred("disabled", true)   # forbid collision
 	
 
