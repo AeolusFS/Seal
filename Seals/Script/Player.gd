@@ -4,7 +4,7 @@ var motion = Vector2()
 var gravity = 20
 var acceleration = 50
 var MAX_speed = 200
-var MAX_gravity = 500
+var MAX_gravity = 1000
 var jump = Vector2(0, -1)
 var jump_height = -700
 var on_wall_speed = 100
@@ -12,7 +12,6 @@ var on_wall_l = false
 var on_wall_r = false
 
 func _physics_process(delta):
-	motion.y = min(motion.y + gravity, MAX_gravity)
 	
 	if Input.is_action_pressed("ui_left"):
 		motion.x = max(motion.x - acceleration, -MAX_speed)
@@ -38,6 +37,8 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = jump_height
+	else:
+		motion.y = min(motion.y + gravity, MAX_gravity)
 
 	move_and_slide(motion*delta*70, jump)
 	
