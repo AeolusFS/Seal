@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var motion = Vector2()
-var gravity = 30
+var gravity = 20
 var jump = Vector2(0, -1)
 var jump_height = -700
 
@@ -15,6 +15,8 @@ func _physics_process(delta):
 	else:
 		motion.x = 0
 		
+
+			
 	if is_on_floor():
 		if Input.is_action_pressed("ui_up"):
 			motion.y = jump_height
