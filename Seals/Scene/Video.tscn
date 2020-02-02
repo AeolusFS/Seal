@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Video/heart_break.ogv" type="VideoStream" id=1]
-[ext_resource path="res://Scene/Video.gd" type="Script" id=2]
+[ext_resource path="res://Scene/Video.gd" type="Script" id=1]
+[ext_resource path="res://Video/heart_break.ogv" type="VideoStream" id=2]
 
 [node name="Video" type="Node"]
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
 margin_left = -4.7832
 margin_right = 1027.22
 margin_bottom = 611.0
-stream = ExtResource( 1 )
+stream = ExtResource( 2 )
 autoplay = true
 __meta__ = {
 "_edit_use_anchors_": false

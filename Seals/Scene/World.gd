@@ -7,7 +7,7 @@ extends Node
 var Outer = true
 onready var inner_tile = $Inner
 onready var outer_tile = $Outer
-onready var initial_pos = Vector2(0, 0)
+onready var initial_pos = Vector2(286, 3168)
 
 var glow_power = 0.2
 var shot_trans = false
