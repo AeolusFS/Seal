@@ -26,6 +26,7 @@ onready var forth_level_pos = Vector2(2666, 1818)
 onready var tem_start_pos = Vector2(1564, -580)
 
 var timer = null
+var timer2 = null
 var delay = 0.5
 var alive = true
 
@@ -36,7 +37,9 @@ func _ready():
 	timer.set_wait_time(delay)
 	timer.connect("timeout", self, "on_timeout_complete")
 
-
+func _input(event):
+	if event.is_action_pressed("Key_R"):
+		$Player.position = tem_start_pos
 
 func _physics_process(delta):
 	if alive:
@@ -98,18 +101,23 @@ func _physics_process(delta):
 		var collision = move_and_collide(motion * delta)
 		if collision:
 			
-			if collision.collider.get_name() == "first_book" and heart_to_go_next == 1:
-				tem_start_pos = first_level_pos
-				self.position = first_level_pos
-			elif collision.collider.get_name() == "second_book" and heart_to_go_next == 2:
-				tem_start_pos = second_level_pos
-				self.position = second_level_pos
-			elif collision.collider.get_name() == "third_book" and heart_to_go_next == 3:
-				tem_start_pos = third_level_pos
-				self.position = third_level_pos
-			elif collision.collider.get_name() == "forth_book" and heart_to_go_next == 4:
-				tem_start_pos = forth_level_pos
-				self.position = forth_level_pos
+			if collision.collider.get_name() == "first_book":
+				if heart_to_go_next == 1:
+					tem_start_pos = first_level_pos
+					self.position = first_level_pos
+					
+			elif collision.collider.get_name() == "second_book":
+				if heart_to_go_next == 2:
+					tem_start_pos = second_level_pos
+					self.position = second_level_pos
+			elif collision.collider.get_name() == "third_book":
+				if heart_to_go_next == 3:
+					tem_start_pos = third_level_pos
+					self.position = third_level_pos
+			elif collision.collider.get_name() == "forth_book":
+				if heart_to_go_next == 4:
+					tem_start_pos = forth_level_pos
+					self.position = forth_level_pos
 				
 			elif collision.collider.get_name() == "Red_heart_lv1":
 				red_heart += 1
@@ -121,7 +129,7 @@ func _physics_process(delta):
 				heart_to_go_next = max(1, heart_to_go_next)
 			elif collision.collider.get_name() == "Red_heart_lv2":
 				red_heart += 1
-				get_node("/root/World/Inner/Red_heart_lv2").queue_free()
+				get_node("/root/World/Outer/Red_heart_lv2").queue_free()
 				heart_to_go_next = max(2, heart_to_go_next)
 			elif collision.collider.get_name() == "Black_heart_lv2":
 				black_heart += 1
@@ -129,7 +137,7 @@ func _physics_process(delta):
 				heart_to_go_next = max(2, heart_to_go_next)
 			elif collision.collider.get_name() == "Red_heart_lv3":
 				red_heart += 1
-				get_node("/root/World/Inner/Red_heart_lv3").queue_free()
+				get_node("/root/World/Outer/Red_heart_lv3").queue_free()
 				heart_to_go_next = max(3, heart_to_go_next)
 			elif collision.collider.get_name() == "Black_heart_lv3":
 				black_heart += 1
@@ -137,13 +145,20 @@ func _physics_process(delta):
 				heart_to_go_next = max(3, heart_to_go_next)
 			elif collision.collider.get_name() == "Red_heart_lv4":
 				red_heart += 1
-				get_node("/root/World/Inner/Red_heart_lv4").queue_free()
+				get_node("/root/World/Outer/Red_heart_lv4").queue_free()
 				heart_to_go_next = max(4, heart_to_go_next)
 			elif collision.collider.get_name() == "Black_heart_lv4":
 				black_heart += 1
 				get_node("/root/World/Inner/Black_heart_lv4").queue_free()
 				heart_to_go_next = max(4, heart_to_go_next)
-				
+			elif collision.collider.get_name() == "Red_heart_lv5":
+				red_heart += 1
+				get_node("/root/World/Outer/Red_heart_lv5").queue_free()
+				heart_to_go_next = max(5, heart_to_go_next)
+			elif collision.collider.get_name() == "Black_heart_lv5":
+				black_heart += 1
+				get_node("/root/World/Inner/Black_heart_lv5").queue_free()
+				heart_to_go_next = max(5, heart_to_go_next)
 				
 				
 			elif collision.collider.get_name() == "OuterCier" or collision.collider.get_name() == "InnerCier":
@@ -157,7 +172,9 @@ func on_timeout_complete():
 	# you can add animation here 
 	alive = true
 	self.position = tem_start_pos
-				
+
+
+
 
 func _on_BSpring_hit_up():
 	motion.y = -bounce_height

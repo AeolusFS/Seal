@@ -10,6 +10,7 @@ onready var outer_tile = $Outer
 onready var initial_pos = Vector2(286, 3168)
 var bkg1 = preload("res://Environment/sky5.png")
 var bkg2 = preload("res://Environment/sky6.png")
+var help_show = false
 
 var glow_power = 0.2
 var shot_trans = false
@@ -38,8 +39,10 @@ func _input(event):
 			Outer = true
 		move_child(get_node("Glow_shader"),  get_child_count())
 			
-	if event.is_action_pressed("Key_R"):
-		$Player.position = initial_pos
+	if event.is_action_pressed("Key_H") and not help_show:
+		$Player/Help.show()
+		
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
