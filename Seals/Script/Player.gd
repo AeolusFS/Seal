@@ -14,12 +14,16 @@ var bounce_height = 350
 onready var can_double_jump = 1
 onready var player_anim = get_node("Player_sprite")
 
+onready var red_heart = 0
+onready var black_heart = 0
+onready var heart_to_go_next = 0
+
 onready var first_level_pos = Vector2(1589, 1327)
 onready var second_level_pos = Vector2(337, 2350)
 onready var third_level_pos = Vector2(293, 3172)
 onready var forth_level_pos = Vector2(2666, 1818)
 
-onready var tem_start_pos = Vector2(1589, 1327)
+onready var tem_start_pos = Vector2(1564, -580)
 
 func _physics_process(delta):
 	
@@ -80,18 +84,56 @@ func _physics_process(delta):
 			
 	var collision = move_and_collide(motion * delta)
 	if collision:
-		if collision.collider.get_name() == "second_book":
+		
+		if collision.collider.get_name() == "first_book" and heart_to_go_next == 1:
+			tem_start_pos = first_level_pos
+			self.position = first_level_pos
+		elif collision.collider.get_name() == "second_book" and heart_to_go_next == 2:
 			tem_start_pos = second_level_pos
 			self.position = second_level_pos
-		if collision.collider.get_name() == "third_book":
+		elif collision.collider.get_name() == "third_book" and heart_to_go_next == 3:
 			tem_start_pos = third_level_pos
 			self.position = third_level_pos
-		if collision.collider.get_name() == "forth_book":
+		elif collision.collider.get_name() == "forth_book" and heart_to_go_next == 4:
 			tem_start_pos = forth_level_pos
 			self.position = forth_level_pos
-		#velocity = motion.bounce(collision.normal)
-		if collision.collider.get_name() == "OuterCier" or collision.collider.get_name() == "InnerCier":
-			#var tile_pos = collision.collider.world_to_map($Outerciier.position)
+			
+		elif collision.collider.get_name() == "Red_heart_lv1":
+			red_heart += 1
+			get_node("/root/World/Outer/Red_heart_lv1").queue_free()
+			heart_to_go_next = max(1, heart_to_go_next)
+		elif collision.collider.get_name() == "Black_heart_lv1":
+			black_heart += 1
+			get_node("/root/World/Inner/Black_heart_lv1").queue_free()
+			heart_to_go_next = max(1, heart_to_go_next)
+		elif collision.collider.get_name() == "Red_heart_lv2":
+			red_heart += 1
+			get_node("/root/World/Inner/Red_heart_lv2").queue_free()
+			heart_to_go_next = max(2, heart_to_go_next)
+		elif collision.collider.get_name() == "Black_heart_lv2":
+			black_heart += 1
+			get_node("/root/World/Inner/Black_heart_lv2").queue_free()
+			heart_to_go_next = max(2, heart_to_go_next)
+		elif collision.collider.get_name() == "Red_heart_lv3":
+			red_heart += 1
+			get_node("/root/World/Inner/Red_heart_lv3").queue_free()
+			heart_to_go_next = max(3, heart_to_go_next)
+		elif collision.collider.get_name() == "Black_heart_lv3":
+			black_heart += 1
+			get_node("/root/World/Inner/Black_heart_lv3").queue_free()
+			heart_to_go_next = max(3, heart_to_go_next)
+		elif collision.collider.get_name() == "Red_heart_lv4":
+			red_heart += 1
+			get_node("/root/World/Inner/Red_heart_lv4").queue_free()
+			heart_to_go_next = max(4, heart_to_go_next)
+		elif collision.collider.get_name() == "Black_heart_lv4":
+			black_heart += 1
+			get_node("/root/World/Inner/Black_heart_lv4").queue_free()
+			heart_to_go_next = max(4, heart_to_go_next)
+			
+			
+			
+		elif collision.collider.get_name() == "OuterCier" or collision.collider.get_name() == "InnerCier":
 			self.position = tem_start_pos
 			
 
