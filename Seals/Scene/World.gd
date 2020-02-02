@@ -50,8 +50,8 @@ func _process(delta):
 	if glow_power <= 0.2:
 		glow_power = 0.2
 	
-	#get_node("/root/World/Player/Camera2D/Glow_shader").get_material().set_shader_param("glow", glow_power)
-	get_node("/root/World/Camera2D/Glow_shader").get_material().set_shader_param("glow", glow_power)
+	get_node("/root/World/Player/Camera2D/Glow_shader").get_material().set_shader_param("glow", glow_power)
+	#get_node("/root/World/Camera2D/Glow_shader").get_material().set_shader_param("glow", glow_power)
 	
 #	pass
 

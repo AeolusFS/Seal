@@ -62,24 +62,22 @@ func _physics_process(delta):
 	move_and_slide(motion*delta*70, jump)
 	
 	if on_wall_l:
-		if motion.x > -150:
-			motion.x -= 150
-		if motion.x < -150:
+		if motion.x > -200:
+			motion.x -= 200
+		if motion.x < -200:
 			on_wall_l = false
 	
 	if on_wall_r:
-		if motion.x < 150:
-			motion.x += 150
-		if motion.x > 150:
+		if motion.x < 200:
+			motion.x += 200
+		if motion.x > 200:
 			on_wall_r = false
 			
 	var collision = move_and_collide(motion * delta)
 	if collision:
 		#velocity = motion.bounce(collision.normal)
 		if collision.collider.get_name() == "OuterCier" or collision.collider.get_name() == "InnerCier":
-			#var tile_pos = collision.collider.world_to_map($Outerciier.position)
-			#self.position = tem_start_pos
-			pass
+			self.position = tem_start_pos
 
 func _on_BSpring_hit_up():
 	motion.y = -bounce_height
