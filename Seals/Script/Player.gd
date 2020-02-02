@@ -11,6 +11,7 @@ var on_wall_speed = 80
 var on_wall_l = false
 var on_wall_r = false
 var bounce_height = 350
+var bounce_width = 1000
 onready var can_double_jump = 1
 onready var player_anim = get_node("Player_sprite")
 
@@ -22,15 +23,28 @@ onready var forth_level_pos = Vector2(2666, 1818)
 onready var tem_start_pos = Vector2(1589, 1327)
 
 func _physics_process(delta):
-	
+	var direction = -1
+	var value = 0
 	if Input.is_action_pressed("ui_left"):
 		player_anim.play("walking")
 		player_anim.set_flip_h(true)
-		motion.x = max(motion.x - acceleration, -MAX_speed)
+		value = motion.x - acceleration
+		if value > 0:
+			direction = 1
+		else:
+			direction = -1
+		motion.x = min(abs(value), MAX_speed) * direction
+		#motion.x = max(motion.x - acceleration, -MAX_speed)
 	elif Input.is_action_pressed("ui_right"):
 		player_anim.play("walking")
 		player_anim.set_flip_h(false)
-		motion.x = min(motion.x + acceleration, MAX_speed)
+		value = motion.x + acceleration
+		if value > 0:
+			direction = 1
+		else:
+			direction = -1
+		motion.x = min(abs(value), MAX_speed) * direction
+		#motion.x = min(motion.x + acceleration, MAX_speed)
 	else:
 		player_anim.play("idle")
 		motion.x = lerp(motion.x, 0, 0.2)
@@ -102,3 +116,15 @@ func _on_USpring_hit_down():
 	motion.y = bounce_height
 
 
+
+
+func _on_LSP_hit_left():
+	print("lll")
+	motion.x = bounce_width
+	motion.y = -bounce_height
+
+
+func _on_RSP_hit_right():
+	print("r")
+	motion.x = -bounce_width
+	motion.y = -bounce_height
