@@ -2,33 +2,33 @@
 
 [ext_resource path="res://Scene/World.gd" type="Script" id=1]
 [ext_resource path="res://Script/Player.gd" type="Script" id=2]
-[ext_resource path="res://Environment/Sky5.png" type="Texture" id=3]
-[ext_resource path="res://Art/Player/player_idle1.png" type="Texture" id=4]
-[ext_resource path="res://Art/Player/player_idle2.png" type="Texture" id=5]
-[ext_resource path="res://Art/Player/player_walking1.png" type="Texture" id=6]
-[ext_resource path="res://Art/Player/player_walking2.png" type="Texture" id=7]
-[ext_resource path="res://Art/Player/player_walking3.png" type="Texture" id=8]
-[ext_resource path="res://Art/Player/player_walking4.png" type="Texture" id=9]
-[ext_resource path="res://Environment/grass.png" type="Texture" id=10]
-[ext_resource path="res://Script/BSpring.gd" type="Script" id=11]
-[ext_resource path="res://Art/Spring2.png" type="Texture" id=12]
-[ext_resource path="res://Art/Spring1.png" type="Texture" id=13]
-[ext_resource path="res://Art/cier.png" type="Texture" id=14]
-[ext_resource path="res://Art/heart_small.png" type="Texture" id=15]
-[ext_resource path="res://Environment/dirt.png" type="Texture" id=16]
-[ext_resource path="res://Art/heart_small_black.png" type="Texture" id=17]
-[ext_resource path="res://Shaders/glow.shader" type="Shader" id=18]
-[ext_resource path="res://Script/USpring.gd" type="Script" id=19]
-[ext_resource path="res://Art/diary_book.png" type="Texture" id=20]
+[ext_resource path="res://Art/Player/player_idle1.png" type="Texture" id=3]
+[ext_resource path="res://Art/Player/player_idle2.png" type="Texture" id=4]
+[ext_resource path="res://Art/Player/player_walking1.png" type="Texture" id=5]
+[ext_resource path="res://Art/Player/player_walking2.png" type="Texture" id=6]
+[ext_resource path="res://Art/Player/player_walking3.png" type="Texture" id=7]
+[ext_resource path="res://Art/Player/player_walking4.png" type="Texture" id=8]
+[ext_resource path="res://Environment/grass.png" type="Texture" id=9]
+[ext_resource path="res://Script/BSpring.gd" type="Script" id=10]
+[ext_resource path="res://Art/Spring2.png" type="Texture" id=11]
+[ext_resource path="res://Art/Spring1.png" type="Texture" id=12]
+[ext_resource path="res://Art/cier.png" type="Texture" id=13]
+[ext_resource path="res://Art/heart_small.png" type="Texture" id=14]
+[ext_resource path="res://Environment/dirt.png" type="Texture" id=15]
+[ext_resource path="res://Art/heart_small_black.png" type="Texture" id=16]
+[ext_resource path="res://Shaders/glow.shader" type="Shader" id=17]
+[ext_resource path="res://Script/USpring.gd" type="Script" id=18]
+[ext_resource path="res://Art/diary_book.png" type="Texture" id=19]
+[ext_resource path="res://Environment/Sky5.png" type="Texture" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "walking",
 "speed": 10.0
@@ -96,7 +96,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="TileSet" id=22]
 9/name = "grass.png 9"
-9/texture = ExtResource( 10 )
+9/texture = ExtResource( 9 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 96, 96 )
@@ -231,12 +231,12 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="SpriteFrames" id=23]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": false,
 "name": "up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "down",
 "speed": 2.0
@@ -253,7 +253,7 @@ points = PoolVector2Array( 0, 32, 16, 32, 16, 0, 0, 0 )
 
 [sub_resource type="TileSet" id=27]
 0/name = "cier.png 0"
-0/texture = ExtResource( 14 )
+0/texture = ExtResource( 13 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 16, 32 )
@@ -269,7 +269,7 @@ points = PoolVector2Array( 0, 32, 16, 32, 16, 0, 0, 0 )
 } ]
 0/z_index = 0
 1/name = "cier.png 1"
-1/texture = ExtResource( 14 )
+1/texture = ExtResource( 13 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 16, 32 )
@@ -316,7 +316,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="TileSet" id=38]
 0/name = "dirt.png 0"
-0/texture = ExtResource( 16 )
+0/texture = ExtResource( 15 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 96, 96 )
@@ -393,7 +393,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="ShaderMaterial" id=40]
 render_priority = 1
-shader = ExtResource( 18 )
+shader = ExtResource( 17 )
 shader_param/glow = 0.2
 
 [sub_resource type="CapsuleShape2D" id=41]
@@ -418,21 +418,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="night1" type="TextureRect" parent="Player/Camera2D"]
-margin_left = -767.898
-margin_top = -427.882
-margin_right = 785.102
-margin_bottom = 446.118
-texture = ExtResource( 3 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Player_sprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -440,6 +428,7 @@ position = Vector2( 0, -2 )
 shape = SubResource( 2 )
 
 [node name="Outer" type="TileMap" parent="."]
+editor/display_folded = true
 tile_set = SubResource( 22 )
 cell_size = Vector2( 33, 33 )
 format = 1
@@ -448,7 +437,7 @@ tile_data = PoolIntArray( -1572828, 9, 0, -1572827, 9, 1, -1572826, 9, 1, -15728
 [node name="OuterBSpring10" type="Area2D" parent="Outer"]
 editor/display_folded = true
 position = Vector2( 462.203, 2027.75 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -464,7 +453,7 @@ shape = SubResource( 24 )
 [node name="OuterBSpring11" type="Area2D" parent="Outer"]
 editor/display_folded = true
 position = Vector2( 2778.86, 1698.41 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -480,7 +469,7 @@ shape = SubResource( 24 )
 [node name="OuterBSpring12" type="Area2D" parent="Outer"]
 editor/display_folded = true
 position = Vector2( 2647.32, 1368.78 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -496,7 +485,7 @@ shape = SubResource( 24 )
 [node name="OuterBSpring13" type="Area2D" parent="Outer"]
 editor/display_folded = true
 position = Vector2( 512.217, 2952.21 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -512,7 +501,7 @@ shape = SubResource( 24 )
 [node name="OuterBSpring14" type="Area2D" parent="Outer"]
 editor/display_folded = true
 position = Vector2( 544.756, 2952.21 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -528,7 +517,7 @@ shape = SubResource( 24 )
 [node name="OuterBSpring15" type="Area2D" parent="Outer"]
 editor/display_folded = true
 position = Vector2( 576.81, 2952.21 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -555,7 +544,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Outer/Red_heart"]
 position = Vector2( 562.641, 1221.12 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Outer/Red_heart"]
 shape = SubResource( 28 )
@@ -569,7 +558,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Outer/Red_heart2"]
 position = Vector2( 562.641, 1221.12 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Outer/Red_heart2"]
 shape = SubResource( 28 )
@@ -582,7 +571,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Outer/Red_heart3"]
 position = Vector2( 562.641, 1221.12 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Outer/Red_heart3"]
 shape = SubResource( 28 )
@@ -595,12 +584,13 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Outer/Red_heart4"]
 position = Vector2( 562.641, 1221.12 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Outer/Red_heart4"]
 shape = SubResource( 28 )
 
 [node name="Inner" type="TileMap" parent="."]
+editor/display_folded = true
 tile_set = SubResource( 38 )
 cell_size = Vector2( 33, 33 )
 format = 1
@@ -608,7 +598,7 @@ tile_data = PoolIntArray( -1572828, 0, 0, -1572827, 0, 1, -1572826, 536870912, 1
 
 [node name="InnerBSpring3" type="Area2D" parent="Inner"]
 position = Vector2( 1566.67, 378.245 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -623,7 +613,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring2" type="Area2D" parent="Inner"]
 position = Vector2( 1534.05, 378.663 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -638,7 +628,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring" type="Area2D" parent="Inner"]
 position = Vector2( 1501.86, 379.081 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -653,7 +643,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring4" type="Area2D" parent="Inner"]
 position = Vector2( 573.504, 1335.8 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -668,7 +658,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring9" type="Area2D" parent="Inner"]
 position = Vector2( 1098.36, 1103.69 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -683,7 +673,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring5" type="Area2D" parent="Inner"]
 position = Vector2( 1536.44, 1104.4 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -698,7 +688,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring6" type="Area2D" parent="Inner"]
 position = Vector2( 1567.13, 1104.4 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -713,7 +703,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring7" type="Area2D" parent="Inner"]
 position = Vector2( 1600.52, 1103.5 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -728,7 +718,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring10" type="Area2D" parent="Inner"]
 position = Vector2( 728.278, 2357.66 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -743,7 +733,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring11" type="Area2D" parent="Inner"]
 position = Vector2( 664.174, 2357.66 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -758,7 +748,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring8" type="Area2D" parent="Inner"]
 position = Vector2( 1633.19, 1104 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -773,7 +763,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring12" type="Area2D" parent="Inner"]
 position = Vector2( 696.276, 2357.74 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -788,7 +778,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring13" type="Area2D" parent="Inner"]
 position = Vector2( 2859.31, 1862.78 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -803,7 +793,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring14" type="Area2D" parent="Inner"]
 position = Vector2( 2891.13, 1532.54 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -818,7 +808,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring15" type="Area2D" parent="Inner"]
 position = Vector2( 2772.81, 1202.45 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -833,7 +823,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring16" type="Area2D" parent="Inner"]
 position = Vector2( 511.493, 3134.93 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -848,7 +838,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring17" type="Area2D" parent="Inner"]
 position = Vector2( 544.313, 3134.29 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -869,7 +859,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Inner/Black_heart2"]
 position = Vector2( 565.245, 1275.57 )
-texture = ExtResource( 17 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inner/Black_heart2"]
 shape = SubResource( 39 )
@@ -882,7 +872,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Inner/Black_heart4"]
 position = Vector2( 565.245, 1275.57 )
-texture = ExtResource( 17 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inner/Black_heart4"]
 shape = SubResource( 39 )
@@ -895,7 +885,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Inner/Black_heart3"]
 position = Vector2( 565.245, 1275.57 )
-texture = ExtResource( 17 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inner/Black_heart3"]
 shape = SubResource( 39 )
@@ -907,7 +897,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Inner/Black_heart"]
 position = Vector2( 565.245, 1275.57 )
-texture = ExtResource( 17 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inner/Black_heart"]
 shape = SubResource( 39 )
@@ -919,19 +909,19 @@ format = 1
 tile_data = PoolIntArray( 1441867, -1610612736, 0, 1441884, -1073741824, 0, 1507403, -1610612736, 0, 1507420, -1073741824, 0, 1572875, 536870912, 0, 1572876, 536870912, 0, 1572939, -1610612736, 0, 1572956, -1073741824, 0, 1638413, -536870912, 0, 1638475, -1610612736, 0, 1638492, -1073741824, 0, 1703949, -536870912, 0, 1704011, -1610612736, 0, 1704028, -1073741824, 0, 1769485, -536870912, 0, 1769547, -1610612736, 0, 1769564, -1073741824, 0, 1835021, -536870912, 0, 1835048, 0, 0, 1835049, 0, 0, 1835083, -1610612736, 0, 1835100, -1073741824, 0, 1900557, -536870912, 0, 1900619, -1610612736, 0, 1900636, -1073741824, 0, 1966155, -1610612736, 0, 1966172, -1073741824, 0, 2031691, -1610612736, 0, 2031708, -1073741824, 0, 2097175, -1073741824, 0, 2097227, -1610612736, 0, 2097244, -1073741824, 0, 2162711, -1073741824, 0, 2162716, 536870912, 0, 2162717, 536870912, 0, 2162718, 536870912, 0, 2162719, 536870912, 0, 2162723, 536870912, 0, 2162724, 536870912, 0, 2162725, 536870912, 0, 2162726, 536870912, 0, 2162727, 536870912, 0, 2162763, -1610612736, 0, 2162780, -1073741824, 0, 2228247, -1073741824, 0, 2228268, -2147483648, 0, 2228299, -1610612736, 0, 2228316, -1073741824, 0, 2293774, 536870912, 0, 2293775, 536870912, 0, 2293776, 536870912, 0, 2293777, 536870912, 0, 2293778, 536870912, 0, 2293779, 536870912, 0, 2293783, -1073741824, 0, 2293804, -2147483648, 0, 2293835, -1610612736, 0, 2293852, -1073741824, 0, 2359319, -1073741824, 0, 2359340, -2147483648, 0, 2359371, -1610612736, 0, 2359388, -1073741824, 0, 2424855, -1073741824, 0, 2424876, -2147483648, 0, 2424907, -1610612736, 0, 2424924, -1073741824, 0, 2490391, -1073741824, 0, 2490412, -2147483648, 0, 2490443, -1610612736, 0, 2490460, -1073741824, 0, 2555927, -1073741824, 0, 2555948, -2147483648, 0, 2555979, -1610612736, 0, 2555996, -1073741824, 0, 2621466, 536870912, 0, 2621467, 536870912, 0, 2621468, 536870912, 0, 2621469, 536870912, 0, 2621470, 536870912, 0, 2621471, 536870912, 0, 2621472, 536870912, 0, 2621473, 536870912, 0, 2621474, 536870912, 0, 2621475, 536870912, 0, 2621476, 536870912, 0, 2621477, 536870912, 0, 2621478, 536870912, 0, 2621479, 536870912, 0, 2621480, 536870912, 0, 2621515, -1610612736, 0, 2621532, -1073741824, 0, 2687051, -1610612736, 0, 2687068, -1073741824, 0, 2752587, -1610612736, 0, 2752604, -1073741824, 0, 2818123, -1610612736, 0, 2818140, -1073741824, 0, 2883659, -1610612736, 0, 2883676, -1073741824, 0, 2949195, -1610612736, 0, 2949212, -1073741824, 0, 3014731, -1610612736, 0, 3014748, -1073741824, 0, 3080267, -1610612736, 0, 3080284, -1073741824, 0, 3145803, -1610612736, 0, 3145820, -1073741824, 0, 3211339, -1610612736, 0, 3211356, -1073741824, 0, 3276875, -1610612736, 0, 3276892, -1073741824, 0, 3342411, -1610612736, 0, 3342428, -1073741824, 0, 3407947, -1610612736, 0, 3407964, -1073741824, 0, 3473483, -1610612736, 0, 3473500, -1073741824, 0, 3538963, 0, 0, 3539019, -1610612736, 0, 3539036, -1073741824, 0, 3604499, 0, 0, 3604555, -1610612736, 0, 3604572, -1073741824, 0, 3670035, 0, 0, 3670091, -1610612736, 0, 3670108, -1073741824, 0, 3735571, 0, 0, 3801103, 0, 0, 3801104, 0, 0, 3801107, 0, 0, 3866639, 0, 0, 3866640, 0, 0, 3866643, 0, 0, 3932175, 0, 0, 3932176, 0, 0, 3932179, 0, 0, 3932183, 0, 0, 3932184, 0, 0, 3932188, -1073741824, 0, 3997711, 0, 0, 3997712, 0, 0, 3997715, 0, 0, 3997721, -1610612736, 0, 3997724, -1073741824, 0, 4063251, 0, 0, 4063257, -1610612736, 0, 4063260, -1073741824, 0, 4128787, 0, 0, 4128793, -1610612736, 0, 4128796, -1073741824, 0, 4128811, 0, 0, 4194323, 0, 0, 4194329, -1610612736, 0, 4194332, -1073741824, 0, 4194345, 0, 0, 4194346, 0, 0, 4194347, 0, 0, 4194348, 0, 0, 4194349, 0, 0, 4194350, 0, 0, 4259858, 0, 0, 4259859, 0, 0, 4259865, -1610612736, 0, 4259868, -1073741824, 0, 4259879, 0, 0, 4259880, 0, 0, 4259881, 0, 0, 4259885, 0, 0, 4259886, 0, 0, 4259887, 0, 0, 4259888, 0, 0, 4325401, -1610612736, 0, 4325408, 0, 0, 4325409, 0, 0, 4325413, 0, 0, 4325416, 0, 0, 4325422, 0, 0, 4325423, 0, 0, 4390937, -1610612736, 0, 4390943, 0, 0, 4390944, 0, 0, 4390945, 0, 0, 4390947, 0, 0, 4390948, 0, 0, 4390958, 0, 0, 4456473, -1610612736, 0, 4456479, 0, 0, 4456480, 0, 0, 4456490, 0, 0, 4456491, 0, 0, 4522002, 0, 0, 4522015, 0, 0, 4522022, 0, 0, 4522026, 0, 0, 4522027, 0, 0, 4522034, 0, 0, 4587538, 0, 0, 4587554, 0, 0, 4587558, 0, 0, 4587559, 0, 0, 4587560, 0, 0, 4587561, 0, 0, 4587562, 0, 0, 4587563, 0, 0, 4587564, 0, 0, 4587569, 0, 0, 4587570, 0, 0, 4653071, 0, 0, 4653072, 0, 0, 4653073, 0, 0, 4653074, 0, 0, 4653079, 0, 0, 4653080, 0, 0, 4653081, 0, 0, 4653082, 0, 0, 4653083, 0, 0, 4653090, 0, 0, 4653093, 0, 0, 4653094, 0, 0, 4653095, 0, 0, 4653096, 0, 0, 4653097, 0, 0, 4653098, 0, 0, 4653099, 0, 0, 4653100, 0, 0, 4653101, 0, 0, 4653105, 0, 0, 4653106, 0, 0, 5505045, -1073741824, 0, 5570581, -1073741824, 0, 5636109, -1073741824, 0, 5636113, -1073741824, 0, 5636117, -1073741824, 0, 5701645, -1073741824, 0, 5701649, -1073741824, 0, 5701653, -1073741824, 0, 5767181, -1073741824, 0, 5767185, -1073741824, 0, 5767189, -1073741824, 0, 5832714, 0, 0, 5832721, -1073741824, 0, 5832723, 0, 0, 5832724, 0, 0, 5832725, 0, 0, 5963793, -1073741824, 0, 6029329, -1073741824, 0, 6094865, -1073741824, 0, 6160398, 0, 0, 6160401, -1073741824, 0, 6225937, -1073741824, 0, 6291466, 0, 0, 6291467, 0, 0, 6291468, 0, 0, 6291469, 0, 0, 6291470, 0, 0, 6291471, 0, 0, 6291472, 0, 0, 6291473, 0, 0, 6291474, 0, 0, 6291475, 0, 0, 6291476, 0, 0, 6291477, 0, 0, 6291478, 0, 0, 6291479, 0, 0, 6291480, 0, 0, 6291481, 0, 0, 6291485, 0, 0, 6291486, 0, 0, 6291492, 0, 0, 6291493, 0, 0, 6291494, 0, 0, 6291495, 0, 0 )
 
 [node name="Glow_shader" type="ColorRect" parent="."]
-visible = false
 material = SubResource( 40 )
-margin_left = -193.0
-margin_top = 524.228
-margin_right = 4256.0
-margin_bottom = 3726.23
+margin_left = -1438.0
+margin_top = -1776.0
+margin_right = 6270.0
+margin_bottom = 3806.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BSpring" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 436.983, 332.427 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -945,8 +935,9 @@ position = Vector2( 0, 8 )
 shape = SubResource( 24 )
 
 [node name="BSpring2" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1077.93, 2359.18 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -960,8 +951,9 @@ position = Vector2( 0, 8 )
 shape = SubResource( 24 )
 
 [node name="BSpring3" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1201.22, 2319.33 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -975,8 +967,9 @@ position = Vector2( 0, 8 )
 shape = SubResource( 24 )
 
 [node name="BSpring4" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1331.18, 2283.23 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -991,7 +984,7 @@ shape = SubResource( 24 )
 
 [node name="BSpring5" type="Area2D" parent="."]
 position = Vector2( 1551.39, 2358.14 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1006,7 +999,7 @@ shape = SubResource( 24 )
 
 [node name="BSpring6" type="Area2D" parent="."]
 position = Vector2( 1615.23, 2269.74 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1021,7 +1014,7 @@ shape = SubResource( 24 )
 
 [node name="BSpring8" type="Area2D" parent="."]
 position = Vector2( 1665.57, 2118.73 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1036,7 +1029,7 @@ shape = SubResource( 24 )
 
 [node name="BSpring9" type="Area2D" parent="."]
 position = Vector2( 1665.57, 2068.39 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1051,7 +1044,7 @@ shape = SubResource( 24 )
 
 [node name="BSpring10" type="Area2D" parent="."]
 position = Vector2( 1666.79, 2020.51 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1066,7 +1059,7 @@ shape = SubResource( 24 )
 
 [node name="BSpring7" type="Area2D" parent="."]
 position = Vector2( 1665.57, 2176.43 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1081,7 +1074,7 @@ shape = SubResource( 24 )
 
 [node name="BSpring11" type="Area2D" parent="."]
 position = Vector2( 1666.79, 1964.03 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1096,7 +1089,7 @@ shape = SubResource( 24 )
 
 [node name="BSpring12" type="Area2D" parent="."]
 position = Vector2( 1668.02, 1906.33 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1111,7 +1104,7 @@ shape = SubResource( 24 )
 
 [node name="BSpring13" type="Area2D" parent="."]
 position = Vector2( 1666.79, 1849.85 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1126,7 +1119,7 @@ shape = SubResource( 24 )
 
 [node name="USpring" type="Area2D" parent="."]
 position = Vector2( 287.1, 127.331 )
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1141,7 +1134,7 @@ shape = SubResource( 24 )
 
 [node name="USpring2" type="Area2D" parent="."]
 position = Vector2( 1139.15, 2237.42 )
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1156,7 +1149,7 @@ shape = SubResource( 24 )
 
 [node name="USpring3" type="Area2D" parent="."]
 position = Vector2( 1281.38, 2193.22 )
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1171,7 +1164,7 @@ shape = SubResource( 24 )
 
 [node name="USpring4" type="Area2D" parent="."]
 position = Vector2( 1425.78, 2148.1 )
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1186,7 +1179,7 @@ shape = SubResource( 24 )
 
 [node name="InnerBSpring10" type="Area2D" parent="."]
 position = Vector2( 481.564, 972.607 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1208,7 +1201,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="books/second_book"]
 position = Vector2( 333.119, 1308.36 )
-texture = ExtResource( 20 )
+texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="books/second_book"]
 position = Vector2( 330.525, 1308.95 )
@@ -1223,7 +1216,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="books/third_book"]
 position = Vector2( 333.119, 1308.36 )
-texture = ExtResource( 20 )
+texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="books/third_book"]
 position = Vector2( 330.525, 1308.95 )
@@ -1238,12 +1231,25 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="books/forth_book"]
 position = Vector2( 333.119, 1308.36 )
-texture = ExtResource( 20 )
+texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="books/forth_book"]
 position = Vector2( 330.525, 1308.95 )
 rotation = -1.52367
 shape = SubResource( 41 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="background" type="TextureRect" parent="ParallaxBackground"]
+margin_left = -9.0
+margin_top = -4.0
+margin_right = 1069.0
+margin_bottom = 603.0
+texture = ExtResource( 20 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Outer/OuterBSpring10" to="Outer/OuterBSpring10" method="_on_Spring_body_entered"]
 [connection signal="body_exited" from="Outer/OuterBSpring10" to="Outer/OuterBSpring10" method="_on_Spring_body_exited"]
 [connection signal="body_shape_entered" from="Outer/OuterBSpring10" to="Outer/OuterBSpring10" method="_on_Spring_body_shape_entered"]

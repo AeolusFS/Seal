@@ -8,6 +8,8 @@ var Outer = true
 onready var inner_tile = $Inner
 onready var outer_tile = $Outer
 onready var initial_pos = Vector2(286, 3168)
+var bkg1 = preload("res://Environment/sky5.png")
+var bkg2 = preload("res://Environment/sky6.png")
 
 var glow_power = 0.2
 var shot_trans = false
@@ -23,11 +25,13 @@ func _input(event):
 	if event.is_action_pressed("Key_Z"):
 		shot_trans = true
 		if (Outer):
+			get_node("ParallaxBackground").get_node("background").set_texture(bkg2)
 			add_child(inner_tile)
 			remove_child(outer_tile)
 			inner_tile.show()
 			Outer = false
 		else:
+			get_node("ParallaxBackground").get_node("background").set_texture(bkg1)
 			add_child(outer_tile)
 			remove_child(inner_tile)
 			outer_tile.show()
