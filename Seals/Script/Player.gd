@@ -14,7 +14,12 @@ var bounce_height = 350
 onready var can_double_jump = 1
 onready var player_anim = get_node("Player_sprite")
 
-onready var tem_start_pos = Vector2(293, 3172)
+onready var first_level_pos = Vector2(1589, 1327)
+onready var second_level_pos = Vector2(337, 2350)
+onready var third_level_pos = Vector2(293, 3172)
+onready var forth_level_pos = Vector2(2666, 1818)
+
+onready var tem_start_pos = Vector2(1589, 1327)
 
 func _physics_process(delta):
 	
@@ -75,6 +80,15 @@ func _physics_process(delta):
 			
 	var collision = move_and_collide(motion * delta)
 	if collision:
+		if collision.collider.get_name() == "second_book":
+			tem_start_pos = second_level_pos
+			self.position = second_level_pos
+		if collision.collider.get_name() == "third_book":
+			tem_start_pos = third_level_pos
+			self.position = third_level_pos
+		if collision.collider.get_name() == "forth_book":
+			tem_start_pos = forth_level_pos
+			self.position = forth_level_pos
 		#velocity = motion.bounce(collision.normal)
 		if collision.collider.get_name() == "OuterCier" or collision.collider.get_name() == "InnerCier":
 			#var tile_pos = collision.collider.world_to_map($Outerciier.position)

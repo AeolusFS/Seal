@@ -7,7 +7,7 @@ extends Node
 var Outer = true
 onready var inner_tile = $Inner
 onready var outer_tile = $Outer
-onready var initial_pos = Vector2(256, 200)
+onready var initial_pos = Vector2(0, 0)
 
 var glow_power = 0.2
 var shot_trans = false
@@ -51,7 +51,7 @@ func _process(delta):
 		glow_power = 0.2
 	
 	#get_node("/root/World/Player/Camera2D/Glow_shader").get_material().set_shader_param("glow", glow_power)
-	get_node("/root/World/Camera2D/Glow_shader").get_material().set_shader_param("glow", glow_power)
+	get_node("Glow_shader").get_material().set_shader_param("glow", glow_power)
 	
 #	pass
 
