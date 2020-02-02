@@ -1,7 +1,11 @@
 extends KinematicBody2D
 
 var motion = Vector2()
-var gravity = 30
+var gravity = 12
+var acceleration = 40
+var MAX_speed = 200
+var MAX_gravity = 500
+var MAX_bounce = 1000
 var jump = Vector2(0, -1)
 var jump_height = -300
 var on_wall_speed = 80
@@ -13,15 +17,33 @@ onready var can_double_jump = 1
 onready var player_anim = get_node("Player_sprite")
 
 func _physics_process(delta):
-	motion.y += gravity
 	
 	if Input.is_action_pressed("ui_left"):
-		motion.x = -200
+		player_anim.play("walking")
+		player_anim.set_flip_h(true)
+		motion.x = max(motion.x - acceleration, -MAX_speed)
 	elif Input.is_action_pressed("ui_right"):
-		motion.x = 200
+		player_anim.play("walking")
+		player_anim.set_flip_h(false)
+		motion.x = min(motion.x + acceleration, MAX_speed)
 	else:
-		motion.x = 0
+		player_anim.play("idle")
+		motion.x = lerp(motion.x, 0, 0.2)
 		
+	if is_on_wall():
+		if Input.is_action_just_pressed("ui_up"):
+			if Input.is_action_pressed("ui_left"):
+				on_wall_r = true
+				motion.y = jump_height
+			if Input.is_action_pressed("ui_right"):
+				on_wall_l = true
+				motion.y = jump_height
+		elif Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
+			motion.y = min(motion.y, on_wall_speed)
+			
+	if is_on_ceiling():
+		motion.y = gravity
+			
 	if is_on_floor():
 		can_double_jump = 1
 		if Input.is_action_just_pressed("ui_up"):
@@ -62,4 +84,3 @@ func _on_RSpring_hit_right():
 	motion.x += bounce_width
 	motion.y = -bounce_height
 
-	move_and_slide(motion, jump)
