@@ -14,7 +14,7 @@ var bounce_height = 350
 onready var can_double_jump = 1
 onready var player_anim = get_node("Player_sprite")
 
-onready var tem_start_pos = Vector2(1582, 1310)
+onready var tem_start_pos = Vector2(976, 2355)
 
 func _physics_process(delta):
 	
@@ -78,8 +78,8 @@ func _physics_process(delta):
 		#velocity = motion.bounce(collision.normal)
 		if collision.collider.get_name() == "OuterCier" or collision.collider.get_name() == "InnerCier":
 			#var tile_pos = collision.collider.world_to_map($Outerciier.position)
-			#self.position = tem_start_pos
-			pass
+			self.position = tem_start_pos
+			
 
 func _on_BSpring_hit_up():
 	motion.y = -bounce_height
