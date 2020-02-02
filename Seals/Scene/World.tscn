@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://Scene/World.gd" type="Script" id=1]
 [ext_resource path="res://Script/Player.gd" type="Script" id=2]
@@ -21,6 +21,10 @@
 [ext_resource path="res://Art/diary_book.png" type="Texture" id=19]
 [ext_resource path="res://Environment/Sky5.png" type="Texture" id=20]
 [ext_resource path="res://Environment/grass2.png" type="Texture" id=21]
+[ext_resource path="res://Art/Player/player_dead2.png" type="Texture" id=22]
+[ext_resource path="res://Art/Player/player_dead3.png" type="Texture" id=23]
+[ext_resource path="res://Art/Player/player_dead4.png" type="Texture" id=24]
+[ext_resource path="res://Art/Player/player_dead1.png" type="Texture" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -32,6 +36,11 @@ animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "walking",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": false,
+"name": "dead",
 "speed": 10.0
 } ]
 
@@ -634,12 +643,13 @@ __meta__ = {
 [node name="Player_sprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 0, -2 )
 shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="Player"]
 
 [node name="Outer" type="TileMap" parent="."]
 tile_set = SubResource( 37 )
