@@ -14,7 +14,7 @@ var bounce_height = 350
 onready var can_double_jump = 1
 onready var player_anim = get_node("Player_sprite")
 
-onready var tem_start_pos = Vector2(976, 2355)
+onready var tem_start_pos = Vector2(293, 3172)
 
 func _physics_process(delta):
 	
